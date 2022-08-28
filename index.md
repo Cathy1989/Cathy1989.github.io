@@ -1,5 +1,3 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+I'm Cathy. I'm a new master student of Statistics Program. This is my first semester.
+I like to share my ideas with teachers and classmates.
+For hobby, I like bakery, running, camping, reading and travel. 

@@ -1,4 +1,4 @@
-## My first blog post
+# My first blog post
 
 ## 1. What do you think being a data scientist is about? 
 

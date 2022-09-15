@@ -5,4 +5,4 @@
 ## *For hobby, I like bakery, running, camping, reading and travel.* 
 ## *In my blog, I hope I can share interesting ideas in different fields with all of you.*  
 ## *If our views are the same, please leave a comment and follow me. If we disagree on one thing, it doesn't matter, just think there is one more voice in the world. Do not force understanding, but hope to respect each other and be more tolerant.*
-！[image]（[/Users/cathy/Documents/Photo Backup/IMG_7031.JPG](https://github.com/Cathy1989/Cathy1989.github.io/blob/main/IMG_7031.JPG)）
+！[image](https://github.com/Cathy1989/Cathy1989.github.io/blob/main/IMG_7031.JPG)）

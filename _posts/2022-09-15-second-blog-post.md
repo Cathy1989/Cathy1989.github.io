@@ -1,3 +1,5 @@
+# My second blog post
+
 ## what was the purpose of the [project1](file:///Users/cathy/Desktop/558/project%201/project-1.html)
 
 We practiced what we learned last week. 

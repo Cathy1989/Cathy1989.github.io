@@ -1,0 +1,147 @@
+---
+title: "project 1"
+author: "Xi Yang"
+date: "2022-09-11"
+output: html_document
+---
+
+### Data Processing
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE}
+library(readr)
+sheet1 <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/EDU01a.csv")
+```
+ 1. Select only the following columns:
+- Area_name (rename as area_name)
+- STCOU
+- Any column that ends in “D”
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE}
+library(tidyverse)
+sheet2<-sheet1 %>%
+  rename(area_name = Area_name) %>%
+  select(area_name, STCOU, ends_with("D"))
+```
+2. Convert the data into long format where each row has only one enrollment value for that Area_name.
+```{r, echo=TRUE, eval=TRUE, message=FALSE}
+library(tidyverse)
+sheet3<-sheet2 %>%
+  pivot_longer(cols=3:12, names_to= "ERM", values_to="VALUE")
+```
+
+
+3. One of the new columns should now correspond to the old column names that end with a “D”. (All columns in these census data files will have this similar format. The first three characters represent the survey with the next four representing the type of value you have from that survey. The last two digits prior to the “D” represent the year of the measurement. For more about the variables see the data information sheet).
+- Parse the string to pull out the year and convert the year into a numeric value such as 1997 or 2002.
+- Grab the first three characters and following four digits to create a new variable representing which measurement was grabbed.  
+    – Hint: Check out the substr() function from base R.
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE}
+  sheet4<- sheet3 %>% mutate(Year=substr(ERM, 8,9))
+  sheet5<- sheet4 %>% mutate(Name=substr(ERM, 1,7))
+  sheet6<- sheet5 %>% separate(Year,c("Year"),convert=TRUE,remove=TRUE)
+  sheet7<- sheet6 %>% mutate(Year=ifelse(Year>=0 & Year<=22,2000+Year,Year+1900))
+  sheet8<- sheet7 %>% select(area_name, STCOU,ERM,VALUE,Name,Year)
+  sheet8 
+```
+4. Create two data sets
+- one data set that contains only non-county data
+- one data set that contains only county level data
+
+Note that all county measurements have the format “County Name, DD” where “DD” represents the state. This can be used to subset the data. I used the code grep(pattern = ", \\w\\w", Area_name) to get the indices corresponding to states.
+
+For the county level data, add a class to the tibble called county. Similarly, add a class to the non-county data called state. This can be done by overwriting the class() you see on the object:
+
+```{r, echo=TRUE, eval=FALSE}
+  county<- sheet8[grep(pattern =", \\w\\w", sheet8$area_name),]
+  state<- sheet8[-grep(pattern =", \\w\\w", sheet8$area_name),]
+  class(county)<- c("county", class(county))
+  class(state)<- c("state", class(state))
+  list(county, state)
+```
+
+5. For the county level tibble, create a new variable that describes which state one of these county measurements corresponds to (the two digit abbreviation is fine, see substr()).
+
+```{r, echo=TRUE, eval=FALSE}
+county<- data.frame(county)
+county_ST<- county %>% mutate(State=substr(area_name, nchar(area_name)-1,nchar(area_name)))
+county_ST
+```
+
+
+6. For the non-county level tibble, create a new variable called “division” corresponding to the state’s classification of division here. If row corresponds to a non-state (i.e. UNITED STATES), return ERROR for the division. The code for this part will not be a ton of fun but can be made easier with the use of %in%.
+
+transmute(division=non-county)
+if(non-state){
+return ERROR
+}
+
+
+### Write functions
+
+```{r, echo=TRUE, eval=FALSE}
+library(readr)
+sheet1 <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/EDU01b.csv")
+```
+
+1. Write one function that does steps 1 & 2 above. Give an optional argument (that is it has a default value) that allows the user to specify the name of the column representing the value (enrollment for these data sets).
+
+```{r, echo=TRUE, eval=FALSE}
+stp1_2<- function(sheet1){
+  sheet2<- sheet1 %>% select(Area_name, STCOU, ends_with("D"))
+  df<-sheet2 %>% pivot_longer(cols=3:12, names_to= "ERM", values_to="VALUE")
+  return(df)
+}
+```
+
+2. Write another function that takes in the output of step 2 and does step 3 above.
+```{r, echo=TRUE, eval=FALSE}
+stp3<- function(df){
+  df1<- df %>% mutate(Year=substr(ERM, 8,9))
+  df1<- df1 %>% mutate(Name=substr(ERM, 1,7))
+  df2<- df1 %>% separate(Year,c("Year"),convert=TRUE,remove=TRUE)
+  df3<- df2 %>% mutate(Year=ifelse(Year>=0 & Year<=22,2000+Year,Year+1900))
+  df3<- df3 %>% select(Area_name, STCOU,ERM,values,Name,Year)
+  return(df3)
+}
+```
+3.
+```{r, echo=TRUE, eval=FALSE}
+step_4<- function(df3)
+  county<- df3[grep(pattern =", \\w\\w", df3$Area_name),]
+  state<- df3[-grep(pattern =", \\w\\w", df3$Area_name),]
+  class(county)<- c("county", class(county))
+  class(state)<- c("state", class(state))
+  return(list(county.state))
+```
+
+
+
+
+4. Write a function to do step 5
+
+```{r, echo=TRUE, eval=FALSE}
+step_5<- function(county)
+  county<- data.frame(county)
+  county_ST<- county %>% mutate(State=substr(Area_name, nchar(Area_name)-1,nchar(Area_name)))
+  return(county_ST)
+```
+
+
+
+
+5. Write a function to do step 6
+6. Write another function that takes in the output from step 3 and creates the two tibbles in step 4, calls the above two functions (to perform steps 5 and 6), and returns two final tibbles.
+
+### Call It and Combine Your Data
+
+
+### Writing a Generic Function for Summarizing
+- filter the data to only include data from the state specified
+- find the overall mean of the statistic (use get(var_name) here as well) for each Area_name and sort those values from largest to smallest if ‘top’ is specified or smallest to largest if ‘bottom’ is specified
+- obtain the top or bottom x number of Area_names from the previous step where x is given by the user or the default 3
+- filter the data for this state to only include the Area_name’s from the previous part (this is the data we’ll use to plot)
+- use the plot code here to create a line plot:
+ggplot(_filtered_df_, aes(x = _your_year_variable_, y = get(var_name), color = Area_name)) +
+geom_line()
+
+### Put it Together

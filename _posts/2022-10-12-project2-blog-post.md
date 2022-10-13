@@ -4,7 +4,8 @@ To summarize everything I did in this vignette, I built functions to interact wi
 retrieved some of the data, and explored it using tables, numerical summaries, and data visualization. I found some interesting things, 
 like that low price on a special day of most stock is less than $150, and the number of transaction is less than 250,000 times. In addition, 
 the opening price is similar to the closing price which implies there is institutions entering, and it is unlikely that there will be large 
-hot money entering. I hope this vignette helps my readers more successfully interact with APIs. It has been good practice for me.
+hot money entering. I hope this vignette helps my readers more successfully interact with APIs. It has been good practice for my partner and me.
+I think teamwork and coordination are also the important parts during this project!
 
 ## What was the most difficult part of the logic and programming for you?
 

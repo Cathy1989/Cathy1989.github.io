@@ -25,7 +25,7 @@ help me to do more professinal financial analysis, give more useful recommendati
 
 ## Provide a link to the rendered github pages repo and the regular repo (non-github pages site)
 
-github repo (render pages): https://manan100196.github.io/ST558-Project-2/
+[github repo (render pages)](https://manan100196.github.io/ST558-Project-2/)
 
-regular repo (non github page): https://github.com/Manan100196/ST558-Project-2
+[regular repo (non github page)](https://github.com/Manan100196/ST558-Project-2)
 

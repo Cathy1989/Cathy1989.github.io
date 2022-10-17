@@ -1,3 +1,5 @@
+# My Third Blog Post
+
 ## Describe the strategy you use for EDA. 
 
 1. Plotting the raw data such as data traces, histograms, bihistograms, probability plots, lag plots, block plots, and Youden plots.

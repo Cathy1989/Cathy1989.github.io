@@ -1,6 +1,6 @@
 # My Third Blog Post
 
-## Describe the strategy you use for EDA. 
+## Describe the strategy you use for EDA:
 
 1. Plotting the raw data such as data traces, histograms, bihistograms, probability plots, lag plots, block plots, and Youden plots.
 2. Plotting simple statistics such as mean plots, standard deviation plots, box plots, and main effects plots of the raw data.
@@ -16,21 +16,23 @@ fitting and hypothesis testing, and handling missing values and making transform
 
 ## What methods do you think are important? 
 
-Typical graphical techniques used in EDA, like Box plot, Histogram, etc.
-Dimensionality reduction: Multidimensional scaling, Principal component analysis (PCA), etc.
-Typical quantitative techniques are: Median polish, Trimean, etc.
+1. Typical graphical techniques used in EDA, like Box plot, Histogram, etc.
 
-Specific statistical functions and techniques you can perform with EDA tools include:
+2. Dimensionality reduction: Multidimensional scaling, Principal component analysis (PCA), etc.
 
-1. Clustering and dimension reduction techniques, which help create graphical displays of high-dimensional data containing many variables.
-2. Univariate visualization of each field in the raw dataset, with summary statistics.
-3. Bivariate visualizations and summary statistics that allow you to assess the relationship between each variable in the dataset and the 
-target variable you’re looking at.
-4. Multivariate visualizations, for mapping and understanding interactions between different fields in the data.
-5. K-means Clustering is a clustering method in unsupervised learning where data points are assigned into K groups, i.e. the number of clusters,
-based on the distance from each group’s centroid. The data points closest to a particular centroid will be clustered under the same category. 
-K-means Clustering is commonly used in market segmentation, pattern recognition, and image compression.
-6. Predictive models, such as linear regression, use statistics and data to predict outcomes.
+3. Typical quantitative techniques are: Median polish, Trimean, etc.
+
+4. Specific statistical functions and techniques you can perform with EDA tools include:
+
+* Clustering and dimension reduction techniques, which help create graphical displays of high-dimensional data containing many variables.
+* Univariate visualization of each field in the raw dataset, with summary statistics.
+* Bivariate visualizations and summary statistics that allow you to assess the relationship between each variable in the dataset and the 
+  target variable you’re looking at.
+* Multivariate visualizations, for mapping and understanding interactions between different fields in the data.
+* K-means Clustering is a clustering method in unsupervised learning where data points are assigned into K groups, i.e. the number of clusters,
+  based on the distance from each group’s centroid. The data points closest to a particular centroid will be clustered under the same category. 
+  K-means Clustering is commonly used in market segmentation, pattern recognition, and image compression.
+* Predictive models, such as linear regression, use statistics and data to predict outcomes.
 
 ## What things do you try to look for? 
 

@@ -1,6 +1,6 @@
-## My Fourth Blog Post
+# My Fourth Blog Post
 
-### Write up a brief discussion of how you would plan to determine variables to use in a regression model.  
+## Write up a brief discussion of how you would plan to determine variables to use in a regression model.  
  
 Variable selection in regression is identifying the best subset among many variables to include in a model. It is arguably the hardest part of model
 building. Many variable selection methods exist because they provide a solution to one of the most important problems in statistics. 
@@ -10,11 +10,7 @@ There are a lot of frequently used variable selection methods. Classical variabl
 It is extremely important to include appropriate variables in prediction modelling, as model’s performance largely depends on which variables are ultimately included in the model. Failure to include the proper variables in the model provides inaccurate results, and the model will fail to capture the true relation that exists in the data between the outcome and the selected variables. There are numerous occasions when prediction models are developed without following the proper steps or adopting the proper method of variable selection. Researchers need to be more aware of and cautious about these very important aspects of prediction modelling.
 
 
-### What variable selection techniques do you prefer and why?
-Many researchers seek advice for the typical situation where there are many IVs to be potentially considered in a model but where sample size is limited (EPV ≈10 or lower). In applied research, variable selection methods have too often been misused, giving such data‐driven methods the exclusive control over model building. So we need to:
-1. Generate an initial working set of variables.
-2. Decide whether variable selection should be applied, which IVs are considered and which variable selection method is employed.
-3. Perform stability investigations and sensitivity analyses.
+## What variable selection techniques do you prefer and why?
 
 Finding the best possible subset of variables to put in a model has been a frustrating exercise. Many variable selection methods exist. Many statisticians know them, but few know they produce poorly performing models. The resulting variable selection methods are a miscarriage of statistics because they are developed by debasing sound statistical theory to a misguided pseudotheoretical foundation.
 

@@ -1,6 +1,6 @@
 # Submission about my project 3
 
-## Explain what you did in the project
+## Explain what you did in the project.
 
 To predict the number of shares, we choose the dataset most relavant to it, and also, we consider just using data from a single data_channel.
 In adiition, we produce some basic analysis before we fitting the model. The purpose is to inspect the trends between different variables 

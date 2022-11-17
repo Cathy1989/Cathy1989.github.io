@@ -1,4 +1,4 @@
-# Submission about my project 3
+# Submission about my project 3 
 
 ## Explain what you did in the project.
 
@@ -25,3 +25,8 @@ great example for how to use methods for analyzing data, and it has been good pr
 world---machine learning. I think teamwork and coordination are also the important parts during this project!
 
 ## Provide a link to the rendered github pages repo and the regular repo (non-github pages site)
+
+
+[github repo (render pages)](https://richardxiao1.github.io/Project-3--Group-B/#project-3--group-b)
+
+[regular repo (non github page)](https://github.com/RichardXiao1/Project-3--Group-B#project-3--group-b)
